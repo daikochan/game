@@ -4,11 +4,11 @@
 
 ##  作品一覧
 
-| No | タイトル | プレイURL | 主な技術 |
-| ① | 障害物よけゲーム | [Play](https://daikochan.github.io/game/d001/) | HTML / CSS / JavaScript (Canvas, LocalStorage) |
-| ② | いわし成長ゲーム | [Play](https://daikochan.github.io/game/d002/) | Canvas, 慣性制御, 当たり判定, 効果音 |
-| ③ | 五目並べAI | [Play](https://daikochan.github.io/game/d003/) | モジュール構成, AI思考ロジック, シーン管理 |
-| ④ | 仕分けゲーム | [Play](https://daikochan.github.io/game/d004/) | requestAnimationFrame, ゾーン描画, コード分割 |
+- | No | タイトル | プレイURL | 主な技術 |
+- | ① | 障害物よけゲーム | [Play](https://daikochan.github.io/game/d001/) | HTML / CSS / JavaScript (Canvas, LocalStorage) |
+- | ② | いわし成長ゲーム | [Play](https://daikochan.github.io/game/d002/) | Canvas, 慣性制御, 当たり判定, 効果音 |
+- | ③ | 五目並べAI | [Play](https://daikochan.github.io/game/d003/) | モジュール構成, AI思考ロジック, シーン管理 |
+- | ④ | 仕分けゲーム | [Play](https://daikochan.github.io/game/d004/) | requestAnimationFrame, ゾーン描画, コード分割 |
 
 ---
 
