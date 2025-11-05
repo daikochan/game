@@ -1,5 +1,86 @@
-[https://daikochan.github.io/game/d005/].
-[https://daikochan.github.io/game/d004/].
-[https://daikochan.github.io/game/d003/].
-[https://daikochan.github.io/game/d002/].
-[https://daikochan.github.io/game/d001/].
+#  製作期間 : 半年前から約1か月の期間
+
+---
+
+##  作品一覧
+
+| No | タイトル | プレイURL | 主な技術 |
+| ① | 障害物よけゲーム | [Play](https://daikochan.github.io/game/d001/) | HTML / CSS / JavaScript (Canvas, LocalStorage) |
+| ② | いわし成長ゲーム | [Play](https://daikochan.github.io/game/d002/) | Canvas, 慣性制御, 当たり判定, 効果音 |
+| ③ | 五目並べAI | [Play](https://daikochan.github.io/game/d003/) | モジュール構成, AI思考ロジック, シーン管理 |
+| ④ | 仕分けゲーム | [Play](https://daikochan.github.io/game/d004/) | requestAnimationFrame, ゾーン描画, コード分割 |
+
+---
+
+##  制作の目的・意図
+
+授業で学んだ知識を「自分の手で形にする」ことを目的に、  
+小規模でも完成した作品を積み上げながら**実装力と発想力を鍛える**ことを意識しました。  
+
+各作品では、以下のようなテーマを設定しました：
+
+- **① 障害物よけゲーム**：最初の自作ゲーム。Canvasを使った動的描画と、アイテム出現バランスの設計を学ぶ。  
+- **② いわし成長ゲーム**：慣性を持った自然な動きや敵との当たり判定を通じて、物理的挙動と操作感を追求。  
+- **③ 五目並べAI**：AIによる戦略的な思考パターンを実装し、探索・評価関数などアルゴリズム設計を学習。  
+- **④ 仕分けゲーム**：複数オブジェクトを同時に処理する構造を設計し、コード分割による保守性を向上。
+
+---
+
+##  制作した過程で努力した点
+
+### ① 障害物よけゲーム
+最初の作品として、**Canvas APIを用いたリアルタイム描画処理**を中心に開発。  
+`spawnObstacle()`・`spawnScoreItem()`・`spawnInvincibleItem()`関数で出現頻度を制御し、  
+`obstacleSpeedMultiplier`で時間経過に応じて難易度を上げる仕組みを実装しました。  
+また、スマートフォン操作に対応するため、`touchstart`・`mousedown`イベントを併用。  
+`localStorage`でハイスコアを保存し、BGMも再生するなど、**小規模ながら完成度の高い構成**を実現しました。
+
+---
+
+### ② いわし成長ゲーム
+「自分より小さい魚を食べて成長し、大きい魚に当たるとゲームオーバー」というルールを実装。  
+`player.velocity`や`friction`など物理パラメータを導入し、**慣性のある自然な動き**を再現しました。  
+`checkCollision()`関数で魚との接触を判定し、`player.size`の増減によって成長を表現。  
+背景の切り替え (`drawBackground()`) やBGM・SE (`eatSE`, `deathSE`) を追加することで、  
+**操作感・演出・成長の手応え**を重視したゲーム体験に仕上げました。  
+この作品から、正式に**スマートフォン対応**（タッチ入力処理）を導入しています。
+
+---
+
+### ③ 五目並べAI
+UIとロジックを分離し、`main.js`から`game.js`や`scene.js`を呼び出す構成に挑戦。  
+AI部分では、難易度に応じて  
+- ランダム配置（easy）  
+- 相手の勝ち筋をブロック（normal）  
+- 勝率を最大化する貪欲法（hard）  
+を`startGameWithAI(level)`で切り替えられるよう実装しました。  
+盤面初期化 (`initBoard()`) やリセット処理 (`resetBoard()`) の分離により、  
+**ゲームループと状態管理の設計力**を身につけました。  
+タイトル・難易度・ゲーム画面を切り替える`showScene()`で、  
+WebアプリらしいUI遷移の仕組みを構築しました。
+
+---
+
+### ④ ボム兵仕分けゲーム
+DSマリオの「ボム兵仕分けゲーム」に着想を得た作品。  
+落下してくるキャラを左右に振り分けるシステムを構築し、**複数オブジェクトの同時描画と判定**を実装しました。  
+`drawOverlay()`で安全地帯や移動範囲を明示的に描画し、  
+`spawnBomb()`で一定時間ごとにボムを生成、経過時間に応じて出現間隔を短縮。  
+`startGameLoop()`と`endGame()`で進行・終了処理を整理し、  
+スコア保存や結果表示を`localStorage`経由で統合しました。  
+この作品では、**コードの分割・再利用・エラー処理への対応力**が大きく向上しました。
+
+---
+
+##  まとめ
+4作品を通して、**発想をコードに変える力**を身につけました。  
+Canvasを使った描画・ゲームループ設計・AI思考・データ保存など、  
+幅広い分野を自ら調べ、試行錯誤を重ねながら実装しています。  
+最初は1ファイル構成から始まり、最終的には**複数ファイルに分割して管理できる構造**を確立。  
+この経験を通じて、**実装力・設計力・継続的な改善力**を養うことができました。
+
+---
+
+## 🔗 リンク
+- GitHubリポジトリ: [https://github.com/daikochan/game](https://github.com/daikochan/game)
+- 公開ページ: [https://daikochan.github.io/game/](https://daikochan.github.io/game/)
