@@ -81,6 +81,6 @@ Canvasを使った描画・ゲームループ設計・AI思考・データ保存
 
 ---
 
-## 🔗 リンク
+##  リンク
 - GitHubリポジトリ: [https://github.com/daikochan/game](https://github.com/daikochan/game)
 - 公開ページ: [https://daikochan.github.io/game/](https://daikochan.github.io/game/)
